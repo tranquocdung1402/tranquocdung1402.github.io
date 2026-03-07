@@ -1,14 +1,9 @@
-// ─────────────────────────────────────────────────────────────────────────────
-//  CV_DATA  — update this object to keep all personal info in one place
-// ─────────────────────────────────────────────────────────────────────────────
 export const CV_DATA = {
-  // ── Identity ──────────────────────────────────────────────────────────────
   name: 'TRAN QUOC DUNG',
   title: 'SENIOR / TECH LEAD JAVA DEVELOPER',
   dob: '1993',
   gender: 'Male',
 
-  // ── Contact — fill in your real values ───────────────────────────────────
   contact: {
     email: 'tranquocdung1402@gmail.com',
     phone: '+84 905 242 630',
@@ -16,28 +11,21 @@ export const CV_DATA = {
     github: 'github.com/tranquocdung1402',
   },
 
-  // ── Stats shown in hero cards ─────────────────────────────────────────────
   stats: [
-    { value: '8+', label: 'Years Experience' },
-    { value: '6+', label: 'Projects Delivered' },
-    { value: '85%+', label: 'Test Coverage' },
+    { value: '8+',      label: 'Years Experience' },
+    { value: '6+',      label: 'Projects Delivered' },
+    { value: '85%+',    label: 'Test Coverage' },
     { value: 'Tech Lead', label: 'Current Role' },
   ],
 
-  // ── Professional summary bullets ──────────────────────────────────────────
   summary: [
-    'Over 8 years of experience in software development, system architecture design, microservices implementation, and cloud-native deployment on Google Cloud Platform.',
-    'Strong expertise in Java 21 (Virtual Threads, Records), Spring Boot 3.x, Armeria gRPC framework, and MyBatis with PostgreSQL/AlloyDB.',
-    'Proficient in system design with Clean Architecture (Hexagonal), event-driven patterns (Google Cloud Pub/Sub), and Infrastructure-as-Code (Terraform, Kubernetes, ArgoCD GitOps).',
-    'Experienced in CI/CD pipelines with GitHub Actions, OPA/Rego policy enforcement, SonarCloud code quality, and automated deployment workflows.',
-    'Distributed observability: OpenTelemetry tracing, Datadog monitoring, structured logging (Logstash Encoder), and SLO/burn-rate alerting.',
-    'Passionate about mentoring junior/mid developers, conducting rigorous code reviews, and driving Agile/Scrum delivery.',
-    'Knowledge of security best practices: Workload Identity Federation, pgcrypto encryption, OPA container security policies, and GCS Signed URL access control.',
-    'Proficient in IntelliJ IDEA (primary), Visual Studio Code, and NetBeans IDE with deep knowledge of debugging & refactoring tools.',
-    'Experienced with AI-assisted development: GitHub Copilot, Claude AI, ChatGPT, and Cursor AI Editor for code generation, architecture review, test scaffolding, and documentation.',
+    '8+ years in backend development, microservices design, and cloud-native deployment on GCP.',
+    'Expert in Java 21 (Virtual Threads, Records), Spring Boot 3.x, Armeria gRPC, MyBatis, and PostgreSQL/AlloyDB.',
+    'Clean/Hexagonal Architecture, event-driven pipelines (Pub/Sub), async batch processing, and GCS Signed URL file management.',
+    'Infrastructure as Code: Terraform, Kubernetes (GKE), ArgoCD GitOps; CI/CD with GitHub Actions and OPA/Rego security policies.',
+    'Observability: OpenTelemetry distributed tracing, Datadog, SLO/burn-rate alerting. 85%+ test coverage across projects.',
   ],
 
-  // ── Technology categories (web grid + print skills) ───────────────────────
   techCategories: [
     {
       category: 'Core Languages & Runtimes',
@@ -47,22 +35,22 @@ export const CV_DATA = {
     {
       category: 'Frameworks & APIs',
       color: 'violet',
-      items: ['Spring Boot 3.x', 'Armeria (gRPC)', 'Protocol Buffers', 'YAVI Validation', 'MyBatis'],
+      items: ['Spring Boot 3.x', 'Armeria (gRPC)', 'Protocol Buffers', 'MyBatis'],
     },
     {
       category: 'Cloud & Infrastructure',
       color: 'sky',
-      items: ['Google Cloud Platform', 'Kubernetes (GKE)', 'Terraform', 'ArgoCD GitOps', 'Google Pub/Sub', 'AlloyDB'],
+      items: ['GCP', 'Kubernetes (GKE)', 'Terraform', 'ArgoCD GitOps', 'Pub/Sub', 'AlloyDB'],
     },
     {
       category: 'CI/CD & DevOps',
       color: 'teal',
-      items: ['GitHub Actions', 'OPA / Rego', 'SonarCloud', 'Docker', 'HikariCP'],
+      items: ['GitHub Actions', 'OPA / Rego', 'SonarCloud', 'Docker'],
     },
     {
       category: 'Observability & Security',
       color: 'amber',
-      items: ['OpenTelemetry', 'Datadog', 'Logstash Encoder', 'SLO Alerting', 'Workload Identity', 'pgcrypto', 'GCS Signed URL'],
+      items: ['OpenTelemetry', 'Datadog', 'Workload Identity', 'pgcrypto', 'SLO Alerting'],
     },
     {
       category: 'Databases',
@@ -72,16 +60,15 @@ export const CV_DATA = {
     {
       category: 'Testing',
       color: 'rose',
-      items: ['JUnit 5', 'Mockito', 'WireMock', 'Integration Testing', 'E2E Testing'],
+      items: ['JUnit 5', 'Mockito', 'WireMock', 'Integration Testing'],
     },
     {
-      category: 'AI & Productivity Tools',
+      category: 'AI & Productivity',
       color: 'purple',
-      items: ['GitHub Copilot', 'Claude AI', 'ChatGPT', 'Cursor AI', 'IntelliJ IDEA'],
+      items: ['GitHub Copilot', 'Claude AI', 'Cursor AI', 'IntelliJ IDEA'],
     },
   ],
 
-  // ── Professional experience ───────────────────────────────────────────────
   experience: [
     {
       company: 'BAP IT JSC',
@@ -89,29 +76,27 @@ export const CV_DATA = {
       period: '2022 – Present',
       projects: [
         {
-          name: 'Marshall — Enterprise Contract Management',
+          name: 'Marshall — Enterprise Contract Management Platform',
           period: '2022 – 2026',
           description:
-            'Architected and delivered an enterprise contract management system that performs clause-by-clause comparison between legal documents and provides AI-driven editing recommendations to legal professionals. Originally built in TypeScript, underwent a full backend migration to Java Armeria to unify with LegalOn Technologies\' microservice ecosystem, leveraging gRPC for high-performance inter-service communication.',
+            'Large-scale enterprise contract management platform for LegalOn Technologies (Japan). Core backend services handling file lifecycle management, async contract processing pipelines (12+ stages: virus scan, language detection, AI extraction, PDF generation), bulk Excel export/import, and due-date notifications — serving multi-tenant legal teams on GKE.',
           responsibilities: [
-            'Architected the contract comparison engine using Java Armeria\'s async-first, non-blocking I/O model with gRPC and Protocol Buffers, achieving significantly faster serialization vs. traditional REST/JSON.',
-            'Designed the service data flow following Clean Architecture: gRPC Request → YAVI Validation → DTO Conversion → UseCase Orchestration → MyBatis Repository → gRPC Response.',
-            'Engineered the database access layer with MyBatis SQL Mapper and HikariCP connection pooling on MySQL, leveraging full SQL control for complex queries and eliminating N+1 issues.',
-            'Established comprehensive JUnit 5 + Mockito test suites achieving 85%+ code coverage on critical business modules.',
-            'Executed end-to-end functional testing across all features — contract comparison workflows, editing advice generation, and API response consistency in sandbox and staging environments.',
+            'Designed Clean/Hexagonal Architecture across 8 modules (~1,500 Java files, 100+ UseCases, 15+ gRPC services); applied Strategy, Adapter, Factory, Composite, and Repository patterns for extensible async processing pipelines.',
+            'Built event-driven contract processing pipeline (VirusCheck → MediaType → Parse → LanguageDetection → AI Extraction → File2Document) using Pub/Sub with sync/async adapter orchestration and deadlock-prevention logic.',
+            'Implemented async Excel export and multi-threaded bulk CSV/Excel import APIs: GCS Pre-Signed URL (V4, 30s) for direct client upload, background workers with cancel support, and idempotent batch processing (~500 records/batch).',
+            'Built data access layer with MyBatis + HikariCP on PostgreSQL/AlloyDB; applied pessimistic locking (SELECT FOR UPDATE) and manual SqlSession transaction management for concurrent contract modifications.',
+            'Achieved 85%+ test coverage with JUnit 5, Mockito, TestContainers, WireMock, and ArchUnit; integrated OpenTelemetry distributed tracing and structured JSON logging (Logstash Encoder) across all services.',
           ],
-          technologies: ['Java Armeria', 'gRPC', 'Protocol Buffers', 'MyBatis', 'HikariCP', 'MySQL', 'YAVI', 'JUnit 5', 'Mockito', 'WireMock', 'Gradle', 'Git'],
+          technologies: ['Java 21', 'Spring Boot 3.x', 'Armeria', 'gRPC', 'Protocol Buffers', 'MyBatis', 'HikariCP', 'PostgreSQL', 'AlloyDB', 'Google Cloud Pub/Sub', 'Google Cloud Storage', 'GKE', 'Kubernetes', 'Terraform', 'ArgoCD', 'OpenTelemetry', 'Datadog', 'JUnit 5', 'Mockito', 'TestContainers', 'WireMock', 'ArchUnit', 'GitHub Actions', 'OPA/Rego'],
         },
         {
-          name: 'Freekey Crypto — Digital Car Key SDK',
+          name: 'Freekey — Digital Car Key SDK',
           period: '2022',
           description:
-            'Developed an SDK for encrypting and unlocking car doors. The SDK can be integrated into existing mobile apps to obtain a digital key and unlock the car. Includes both an app-side SDK and a server component for managing digital keys and SDK communication.',
+            'SDK for encrypting and unlocking car doors via mobile app integration, including server-side key management and device communication.',
           responsibilities: [
-            'Developed APIs for both admin and user roles.',
-            'Optimized source code ensuring security, performance, and scalability of the application.',
-            'Performed self-review before every push to minimize production bugs.',
-            'Wrote JUnit tests to verify code logic and ensure coverage.',
+            'Developed admin and user-facing APIs for digital key management.',
+            'Ensured security, performance, and maintainability through code review and JUnit test suites.',
           ],
           technologies: ['Java Spring', 'MySQL'],
         },
@@ -123,47 +108,38 @@ export const CV_DATA = {
       period: '2018 – 2022',
       projects: [
         {
-          name: 'TOPPAN — Printing Website Application',
+          name: 'TOPPAN — Printing Website',
           period: '2022',
-          description: 'Creating a full-featured printing website application with admin and user-facing modules.',
+          description: 'Full-featured printing website with admin and user-facing modules.',
           responsibilities: [
-            'Constructed APIs, interfaces, and user-related features.',
-            'Performed self-review before pushing to minimize production bugs.',
-            'Wrote test cases to examine functionality and performance.',
+            'Built APIs and user-facing features; wrote test cases for functionality and performance.',
           ],
           technologies: ['Java', 'A2M5'],
         },
         {
           name: 'IBM — Database Migration',
           period: '2022',
-          description:
-            'Wrote SQL procedures and functions to migrate data from a legacy database to a new schema.',
+          description: 'Migrated data from a legacy database to a new schema using SQL procedures and functions.',
           responsibilities: [
-            'Created SQL functions and procedures to transform data between old and new schemas.',
-            'Self-reviewed 100% of the code to ensure data safety.',
-            'Wrote test cases to validate data parity between old and new databases.',
+            'Wrote SQL transformation procedures; validated data parity between old and new schemas.',
           ],
           technologies: ['SQL', 'A2M5'],
         },
         {
-          name: 'CR — Software Maintenance & Upgrade',
+          name: 'CR — Software Maintenance',
           period: 'Nov 2019',
-          description: 'Maintenance and feature upgrade for an existing production software system.',
+          description: 'Maintenance and feature upgrades for an existing production system.',
           responsibilities: [
-            'Created new features and modified existing ones to meet customer requirements.',
-            'Performed self-review before every push, wrote and executed test cases.',
+            'Added new features and modified existing ones per customer requirements.',
           ],
           technologies: ['Java', 'A2M5'],
         },
         {
           name: 'Corelearn — Learning Management System',
           period: 'May 2019',
-          description:
-            'Built a full-featured e-learning website supporting users, courses, lectures, comments, reviews, and payments.',
+          description: 'E-learning platform supporting courses, payments, comments, and user management.',
           responsibilities: [
-            'Built APIs, interfaces, and features for users, courses, lectures, comments, reviews, and payments.',
-            'Optimized source code for security, performance, and scalability.',
-            'Verified cross-browser and cross-device stability, performance, and compatibility.',
+            'Built APIs for courses, payments, and user features; optimized for security and cross-browser compatibility.',
           ],
           technologies: ['Java Servlet', 'MySQL', 'JUnit'],
         },
@@ -171,7 +147,6 @@ export const CV_DATA = {
     },
   ],
 
-  // ── Certifications ────────────────────────────────────────────────────────
   certifications: [
     {
       period: '2018',
@@ -180,37 +155,36 @@ export const CV_DATA = {
     },
   ],
 
-  // ── Key competencies (shown as feature cards in Expertise section) ─────────
   competencies: [
     {
       icon: 'Server',
       title: 'Backend Architecture',
-      desc: 'Microservices, Clean/Hexagonal Architecture, gRPC, REST, event-driven systems with Pub/Sub.',
+      desc: 'Microservices, Clean/Hexagonal Architecture, gRPC, REST, event-driven with Pub/Sub.',
     },
     {
       icon: 'Cloud',
       title: 'Cloud Native & DevOps',
-      desc: 'GCP, Kubernetes, Terraform IaC, ArgoCD GitOps, GitHub Actions CI/CD pipelines.',
+      desc: 'GCP, Kubernetes, Terraform, ArgoCD GitOps, GitHub Actions CI/CD.',
     },
     {
       icon: 'ShieldCheck',
       title: 'Quality & Security',
-      desc: 'OPA/Rego policies, SonarCloud, pgcrypto, Workload Identity, 85%+ test coverage.',
+      desc: 'OPA/Rego, SonarCloud, pgcrypto, Workload Identity, 85%+ test coverage.',
     },
     {
       icon: 'Activity',
       title: 'Observability',
-      desc: 'OpenTelemetry distributed tracing, Datadog monitoring, SLO/burn-rate alerting.',
+      desc: 'OpenTelemetry tracing, Datadog monitoring, SLO/burn-rate alerting.',
     },
     {
       icon: 'Users',
       title: 'Technical Leadership',
-      desc: 'Mentoring, code reviews, Agile/Scrum delivery, AI-augmented developer workflows.',
+      desc: 'Mentoring, code reviews, Agile/Scrum delivery, AI-assisted workflows.',
     },
     {
       icon: 'Zap',
       title: 'Performance Engineering',
-      desc: 'Virtual Threads (Java 21), async I/O, HikariCP tuning, N+1 elimination, query optimization.',
+      desc: 'Java 21 Virtual Threads, async I/O, HikariCP tuning, query optimization.',
     },
   ],
 }
