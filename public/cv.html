@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>CV — Tran Quoc Dung | Senior Java Developer</title>
+<style>
+/* ── Google Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+
+:root{
+  --navy:    #0D2137;
+  --navy2:   #132D4A;
+  --blue:    #1E60B8;
+  --blue-lt: #3B82F6;
+  --sky:     #DBEAFE;
+  --gray:    #64748B;
+  --gray-lt: #94A3B8;
+  --line:    #E2E8F0;
+  --bg:      #F1F5F9;
+  --white:   #FFFFFF;
+  --text:    #1E293B;
+  --text2:   #374151;
+}
+
+html{font-size:9.5pt;-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+body{font-family:'Inter',Arial,'Helvetica Neue',sans-serif;background:#CBD5E1;color:var(--text);}
+
+/* ── A4 Page ── */
+.page{
+  width:210mm;min-height:297mm;
+  margin:8mm auto;
+  background:var(--white);
+  display:flex;
+  flex-direction:column;
+  box-shadow:0 8px 60px rgba(0,0,0,.22);
+  overflow:hidden;
+}
+
+/* ══════════════════════════════════════════
+   TOP HEADER BAR — full width
+══════════════════════════════════════════ */
+.header{
+  background:var(--navy);
+  display:flex;
+  align-items:center;
+  gap:6mm;
+  padding:7mm 9mm;
+  position:relative;
+}
+.header::after{
+  content:'';
+  position:absolute;
+  bottom:0;left:0;right:0;
+  height:3px;
+  background:linear-gradient(90deg,#1E60B8,#38BDF8,#1E60B8);
+}
+
+/* Photo */
+.photo-wrap{
+  width:28mm;height:28mm;
+  border-radius:50%;
+  border:2.5px solid rgba(255,255,255,.25);
+  overflow:hidden;
+  flex-shrink:0;
+  background:#1a3a5c;
+  box-shadow:0 0 0 5px rgba(255,255,255,.07);
+}
+.photo-wrap img{width:100%;height:100%;object-fit:cover;object-position:top center;}
+
+/* Name + Title */
+.header-info{flex:1;min-width:0;}
+.header-name{
+  font-size:20pt;font-weight:800;
+  color:var(--white);
+  letter-spacing:-.01em;
+  line-height:1.1;
+  margin-bottom:1.5mm;
+}
+.header-title{
+  font-size:9pt;font-weight:500;
+  color:#93C5FD;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  margin-bottom:3mm;
+}
+.header-contacts{
+  display:flex;flex-wrap:wrap;gap:1.5mm 5mm;
+}
+.hc-item{
+  display:flex;align-items:center;gap:1.5mm;
+  font-size:7.5pt;color:#CBD5E1;
+}
+.hc-dot{
+  width:3.5mm;height:3.5mm;
+  border-radius:50%;
+  background:var(--blue-lt);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.hc-dot svg{width:2mm;height:2mm;}
+
+/* Badges row */
+.header-badges{
+  display:flex;flex-direction:column;gap:2mm;
+  align-items:flex-end;
+}
+.badge{
+  font-size:6.2pt;font-weight:700;
+  color:#F0F9FF;
+  background:rgba(59,130,246,.25);
+  border:1px solid rgba(59,130,246,.4);
+  padding:1mm 3mm;border-radius:2mm;
+  white-space:nowrap;
+  letter-spacing:.05em;
+  text-transform:uppercase;
+}
+.badge.green{
+  background:rgba(16,185,129,.2);
+  border-color:rgba(16,185,129,.4);
+  color:#A7F3D0;
+}
+
+/* ══════════════════════════════════════════
+   BODY — 2 columns
+══════════════════════════════════════════ */
+.body{display:flex;flex:1;}
+
+/* ── LEFT SIDEBAR ── */
+.sidebar{
+  width:65mm;
+  background:#F8FAFC;
+  border-right:1px solid var(--line);
+  padding:6mm 5mm;
+  display:flex;flex-direction:column;gap:5.5mm;
+  flex-shrink:0;
+}
+.sb-sec-title{
+  font-size:6pt;font-weight:700;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--blue);
+  margin-bottom:2.5mm;
+  padding-bottom:1.5mm;
+  border-bottom:1.5px solid var(--sky);
+}
+
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:2mm;}
+.stat-box{
+  background:var(--white);
+  border:1px solid var(--line);
+  border-radius:2mm;
+  padding:2.5mm 2mm;
+  text-align:center;
+}
+.stat-val{font-size:10pt;font-weight:800;color:var(--navy);line-height:1;}
+.stat-lbl{font-size:5.5pt;color:var(--gray-lt);margin-top:1mm;font-weight:500;}
+
+/* Skills */
+.skill-group{margin-bottom:3mm;}
+.skill-group-name{
+  font-size:6.5pt;font-weight:700;
+  color:var(--text);margin-bottom:1.5mm;
+}
+.tags{display:flex;flex-wrap:wrap;gap:1.2mm;}
+.tag{
+  font-size:6pt;font-weight:500;
+  background:var(--white);
+  border:1px solid #C7D7F0;
+  color:var(--navy2);
+  padding:.8mm 2mm;border-radius:1.5mm;
+  line-height:1;
+}
+.tag.hl{background:#EFF6FF;border-color:#BFDBFE;color:var(--blue);}
+
+/* Soft skills */
+.soft-list{list-style:none;}
+.soft-list li{
+  font-size:7pt;color:var(--text2);
+  padding:1.5mm 0 1.5mm 3.5mm;
+  border-bottom:1px solid var(--line);
+  position:relative;
+}
+.soft-list li:last-child{border-bottom:none;}
+.soft-list li::before{
+  content:'▸';
+  position:absolute;left:0;
+  color:var(--blue);font-size:6.5pt;
+  top:1.8mm;
+}
+
+/* ── MAIN CONTENT ── */
+.main{
+  flex:1;min-width:0;
+  padding:6mm 7mm;
+  display:flex;flex-direction:column;gap:5mm;
+}
+.sec-title{
+  font-size:7.5pt;font-weight:700;
+  text-transform:uppercase;letter-spacing:.14em;
+  color:var(--navy);
+  margin-bottom:3mm;
+  display:flex;align-items:center;gap:2mm;
+}
+.sec-title::before{
+  content:'';
+  width:3mm;height:3mm;border-radius:50%;
+  background:var(--blue);flex-shrink:0;
+}
+.sec-title::after{
+  content:'';flex:1;height:1px;
+  background:linear-gradient(90deg,var(--sky),transparent);
+}
+
+/* Summary */
+.summary-list{list-style:none;}
+.summary-list li{
+  font-size:7.5pt;color:var(--text2);line-height:1.6;
+  padding-left:4mm;position:relative;margin-bottom:1.5mm;
+}
+.summary-list li::before{
+  content:'▸';position:absolute;left:0;
+  color:var(--blue);font-size:7pt;top:0;
+}
+
+/* Experience — company block */
+.exp-company-header{
+  display:flex;justify-content:space-between;align-items:center;
+  background:var(--navy);
+  border-radius:2.5mm;
+  padding:2.5mm 4mm;
+  margin-bottom:3mm;
+}
+.exp-co-left .co-name{
+  font-size:9pt;font-weight:800;color:var(--white);
+}
+.exp-co-left .co-role{
+  font-size:6.8pt;font-weight:500;color:#93C5FD;margin-top:.5mm;
+}
+.exp-period-badge{
+  font-size:6pt;font-weight:700;
+  background:rgba(59,130,246,.3);
+  border:1px solid rgba(255,255,255,.15);
+  color:var(--white);
+  padding:1mm 2.5mm;border-radius:2mm;
+  white-space:nowrap;
+}
+
+/* Project card */
+.proj-card{
+  margin-bottom:4mm;
+  padding:3mm 3.5mm 3mm 4mm;
+  border-left:2.5px solid var(--sky);
+  background:#FAFBFC;
+  border-radius:0 2mm 2mm 0;
+}
+.proj-card:last-child{margin-bottom:0;}
+.proj-top{
+  display:flex;justify-content:space-between;
+  align-items:flex-start;margin-bottom:1.5mm;
+}
+.proj-name{font-size:8pt;font-weight:700;color:var(--navy2);}
+.proj-period{font-size:6pt;color:var(--gray);white-space:nowrap;margin-left:2mm;flex-shrink:0;}
+.proj-desc{
+  font-size:7pt;color:#4B5563;line-height:1.55;
+  font-style:italic;
+  border-left:1.5px solid #C7D7F0;
+  padding-left:2.5mm;
+  margin-bottom:2mm;
+}
+.resp-list{list-style:none;margin-bottom:2mm;}
+.resp-list li{
+  font-size:7pt;color:var(--text2);line-height:1.55;
+  padding-left:3.5mm;position:relative;margin-bottom:1mm;
+}
+.resp-list li::before{content:'–';position:absolute;left:0;color:var(--blue);font-weight:700;}
+.tech-row{display:flex;flex-wrap:wrap;gap:1mm;}
+.t-badge{
+  font-size:5.8pt;font-weight:600;
+  background:var(--sky);
+  border:1px solid #BFDBFE;
+  color:var(--blue);
+  padding:.6mm 1.8mm;border-radius:1.5mm;line-height:1;
+}
+
+/* Certifications */
+.cert-card{
+  display:flex;align-items:center;gap:3mm;
+  padding:2.5mm 3mm;
+  background:var(--bg);
+  border:1px solid var(--line);
+  border-radius:2mm;
+}
+.cert-year{
+  font-size:7pt;font-weight:700;
+  color:var(--white);
+  background:var(--blue);
+  padding:.8mm 2.5mm;border-radius:1.5mm;
+  flex-shrink:0;
+}
+.cert-name{font-size:7.5pt;font-weight:700;color:var(--navy);}
+.cert-sub{font-size:6.5pt;color:var(--gray);margin-top:.5mm;}
+
+/* ── PRINT ── */
+@media print{
+  body{background:none;}
+  .page{margin:0;width:210mm;min-height:297mm;box-shadow:none;}
+  @page{size:A4;margin:0;}
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ════════ HEADER ════════ -->
+  <header class="header">
+    <div class="photo-wrap">
+      <img src="avatar.png" alt="Tran Quoc Dung"/>
+    </div>
+    <div class="header-info">
+      <div class="header-name">Tran Quoc Dung</div>
+      <div class="header-title">Senior Java Developer &amp; Tech Lead</div>
+      <div class="header-contacts">
+        <div class="hc-item">
+          <div class="hc-dot">
+            <svg viewBox="0 0 8 8" fill="none"><rect x="1" y="2" width="6" height="4" rx=".6" stroke="white" stroke-width="1"/><path d="M1 2.5l3 2 3-2" stroke="white" stroke-width="1"/></svg>
+          </div>
+          tranquocdung1402@gmail.com
+        </div>
+        <div class="hc-item">
+          <div class="hc-dot">
+            <svg viewBox="0 0 8 8" fill="none"><rect x="1.5" y="1" width="5" height="6" rx=".8" stroke="white" stroke-width="1"/><line x1="3" y1="5.5" x2="5" y2="5.5" stroke="white" stroke-width=".8"/></svg>
+          </div>
+          +84 905 242 630
+        </div>
+        <div class="hc-item">
+          <div class="hc-dot">
+            <svg viewBox="0 0 8 8" fill="none"><circle cx="4" cy="3.5" r="1.2" stroke="white" stroke-width="1"/><path d="M4 1C2.34 1 1 2.34 1 4c0 1.66 3 6 3 6s3-4.34 3-6c0-1.66-1.34-3-3-3z" stroke="white" stroke-width=".8"/></svg>
+          </div>
+          Da Nang, Vietnam
+        </div>
+        <div class="hc-item">
+          <div class="hc-dot">
+            <svg viewBox="0 0 8 8" fill="none"><path d="M4 1C2.34 1 1 2.34 1 4c0 1.33.64 2.5 1.63 3.25.3.22.37.63.37.75h2c0-.12.07-.53.37-.75C6.36 6.5 7 5.33 7 4 7 2.34 5.66 1 4 1z" stroke="white" stroke-width=".8"/></svg>
+          </div>
+          github.com/tranquocdung1402
+        </div>
+        <div class="hc-item">
+          <div class="hc-dot">
+            <svg viewBox="0 0 8 8" fill="none"><circle cx="4" cy="4" r="3" stroke="white" stroke-width=".9"/><path d="M4 1.5v2.5l1.5 1" stroke="white" stroke-width=".9"/></svg>
+          </div>
+          tranquocdung1402.github.io
+        </div>
+      </div>
+    </div>
+    <div class="header-badges">
+      <div class="badge green">● Open to Work</div>
+      <div class="badge">8+ Yrs Experience</div>
+      <div class="badge">Tech Lead</div>
+    </div>
+  </header>
+
+  <!-- ════════ BODY ════════ -->
+  <div class="body">
+
+    <!-- ════ LEFT SIDEBAR ════ -->
+    <aside class="sidebar">
+
+      <!-- Stats -->
+      <div>
+        <div class="sb-sec-title">At a Glance</div>
+        <div class="stats-grid">
+          <div class="stat-box"><div class="stat-val">8+</div><div class="stat-lbl">Years Exp.</div></div>
+          <div class="stat-box"><div class="stat-val">6+</div><div class="stat-lbl">Projects</div></div>
+          <div class="stat-box"><div class="stat-val">85%+</div><div class="stat-lbl">Test Coverage</div></div>
+          <div class="stat-box"><div class="stat-val">Lead</div><div class="stat-lbl">Current Role</div></div>
+        </div>
+      </div>
+
+      <!-- Core Languages -->
+      <div>
+        <div class="sb-sec-title">Technical Skills</div>
+        <div class="skill-group">
+          <div class="skill-group-name">Languages &amp; Runtime</div>
+          <div class="tags">
+            <span class="tag hl">Java 21</span>
+            <span class="tag hl">Virtual Threads</span>
+            <span class="tag">Records</span>
+            <span class="tag">SQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">Frameworks &amp; APIs</div>
+          <div class="tags">
+            <span class="tag hl">Spring Boot 3.x</span>
+            <span class="tag hl">Armeria (gRPC)</span>
+            <span class="tag">Protocol Buffers</span>
+            <span class="tag">MyBatis</span>
+            <span class="tag">HikariCP</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">Cloud &amp; Infrastructure</div>
+          <div class="tags">
+            <span class="tag hl">GCP</span>
+            <span class="tag hl">Kubernetes (GKE)</span>
+            <span class="tag">Terraform</span>
+            <span class="tag">ArgoCD</span>
+            <span class="tag">Pub/Sub</span>
+            <span class="tag">AlloyDB</span>
+            <span class="tag">GCS</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">CI/CD &amp; Security</div>
+          <div class="tags">
+            <span class="tag hl">GitHub Actions</span>
+            <span class="tag">OPA/Rego</span>
+            <span class="tag">SonarCloud</span>
+            <span class="tag">Docker</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">Observability</div>
+          <div class="tags">
+            <span class="tag hl">OpenTelemetry</span>
+            <span class="tag">Datadog</span>
+            <span class="tag">SLO Alerting</span>
+            <span class="tag">pgcrypto</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">Databases</div>
+          <div class="tags">
+            <span class="tag hl">PostgreSQL</span>
+            <span class="tag">AlloyDB</span>
+            <span class="tag">MySQL</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-name">Testing</div>
+          <div class="tags">
+            <span class="tag">JUnit 5</span>
+            <span class="tag">Mockito</span>
+            <span class="tag">TestContainers</span>
+            <span class="tag">WireMock</span>
+            <span class="tag">ArchUnit</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Soft Skills -->
+      <div>
+        <div class="sb-sec-title">Core Strengths</div>
+        <ul class="soft-list">
+          <li>Team Leadership &amp; Mentoring</li>
+          <li>Clean &amp; Hexagonal Architecture</li>
+          <li>Agile / Scrum Delivery</li>
+          <li>System Design &amp; Scalability</li>
+          <li>Code Review &amp; Quality Gates</li>
+          <li>Cross-functional Collaboration</li>
+        </ul>
+      </div>
+
+    </aside>
+
+    <!-- ════ MAIN ════ -->
+    <main class="main">
+
+      <!-- Summary -->
+      <div>
+        <div class="sec-title">Professional Summary</div>
+        <ul class="summary-list">
+          <li>8+ years in backend development, microservices design, and cloud-native deployment on GCP.</li>
+          <li>Expert in <strong>Java 21</strong> (Virtual Threads, Records), <strong>Spring Boot 3.x</strong>, Armeria gRPC, MyBatis, and PostgreSQL/AlloyDB.</li>
+          <li>Proven track record building <strong>event-driven pipelines</strong> (Pub/Sub), async batch processing systems, and GCS Signed URL file workflows.</li>
+          <li>Infrastructure as Code: <strong>Terraform, Kubernetes (GKE), ArgoCD GitOps</strong>; CI/CD with GitHub Actions and OPA/Rego security policies.</li>
+          <li>Observability: OpenTelemetry distributed tracing, Datadog, SLO/burn-rate alerting. <strong>85%+ test coverage</strong> across all projects.</li>
+        </ul>
+      </div>
+
+      <!-- Experience -->
+      <div>
+        <div class="sec-title">Professional Experience</div>
+
+        <!-- BAP IT JSC -->
+        <div class="exp-company-header">
+          <div class="exp-co-left">
+            <div class="co-name">BAP IT JSC</div>
+            <div class="co-role">Senior / Tech Lead Java Developer</div>
+          </div>
+          <span class="exp-period-badge">2022 – Present</span>
+        </div>
+
+        <!-- Marshall -->
+        <div class="proj-card">
+          <div class="proj-top">
+            <div class="proj-name">Marshall — Enterprise Contract Management Platform</div>
+            <span class="proj-period">2022 – 2026</span>
+          </div>
+          <p class="proj-desc">Large-scale enterprise contract management platform for LegalOn Technologies (Japan). Core backend services for file lifecycle management, async processing pipelines (12+ stages), bulk Excel export/import, and due-date notifications — multi-tenant, running on GKE.</p>
+          <ul class="resp-list">
+            <li>Designed <strong>Clean/Hexagonal Architecture</strong> across 8 modules (~1,500 Java files, 100+ UseCases, 15+ gRPC services); applied Strategy, Adapter, Factory, Composite, and Repository patterns.</li>
+            <li>Built event-driven contract pipeline (<em>VirusCheck → Parse → LanguageDetection → AI Extraction → File2Document</em>) via Pub/Sub with sync/async adapter orchestration and deadlock-prevention logic.</li>
+            <li>Implemented <strong>async Excel export</strong> and multi-threaded bulk CSV/Excel import: GCS Pre-Signed URL (V4, 30s) for direct upload, background workers with cancel support, idempotent batch processing (~500 records/batch).</li>
+            <li>Data access with <strong>MyBatis + HikariCP on AlloyDB</strong>; pessimistic locking (SELECT FOR UPDATE) and manual SqlSession transaction management for concurrent modifications.</li>
+            <li>Achieved <strong>85%+ test coverage</strong> — JUnit 5, Mockito, TestContainers, WireMock, ArchUnit; OpenTelemetry distributed tracing + structured JSON logging (Logstash Encoder).</li>
+          </ul>
+          <div class="tech-row">
+            <span class="t-badge">Java 21</span><span class="t-badge">Spring Boot 3.x</span><span class="t-badge">Armeria</span><span class="t-badge">gRPC</span><span class="t-badge">MyBatis</span><span class="t-badge">AlloyDB</span><span class="t-badge">Pub/Sub</span><span class="t-badge">GCS</span><span class="t-badge">GKE</span><span class="t-badge">Terraform</span><span class="t-badge">ArgoCD</span><span class="t-badge">OpenTelemetry</span><span class="t-badge">Datadog</span><span class="t-badge">OPA/Rego</span><span class="t-badge">GitHub Actions</span>
+          </div>
+        </div>
+
+        <!-- Freekey -->
+        <div class="proj-card">
+          <div class="proj-top">
+            <div class="proj-name">Freekey — Digital Car Key SDK</div>
+            <span class="proj-period">2022</span>
+          </div>
+          <p class="proj-desc">SDK for encrypting and unlocking car doors via mobile app integration with server-side key management.</p>
+          <ul class="resp-list">
+            <li>Developed admin and user-facing APIs for digital key lifecycle management.</li>
+            <li>Ensured security and maintainability through code review and JUnit test suites.</li>
+          </ul>
+          <div class="tech-row"><span class="t-badge">Java Spring</span><span class="t-badge">MySQL</span><span class="t-badge">JUnit</span></div>
+        </div>
+
+        <!-- ARCH VIETNAM -->
+        <div class="exp-company-header" style="margin-top:3mm;">
+          <div class="exp-co-left">
+            <div class="co-name">ARCH VIETNAM CO., LTD</div>
+            <div class="co-role">Java Developer</div>
+          </div>
+          <span class="exp-period-badge">2018 – 2022</span>
+        </div>
+
+        <!-- TOPPAN + IBM + Corelearn (compact) -->
+        <div class="proj-card">
+          <div class="proj-top">
+            <div class="proj-name">TOPPAN — Printing Website</div>
+            <span class="proj-period">2022</span>
+          </div>
+          <ul class="resp-list">
+            <li>Built admin and user APIs for a full-featured printing platform; wrote performance test cases.</li>
+          </ul>
+          <div class="tech-row"><span class="t-badge">Java</span><span class="t-badge">A2M5</span></div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-top">
+            <div class="proj-name">IBM — Legacy Database Migration</div>
+            <span class="proj-period">2022</span>
+          </div>
+          <ul class="resp-list">
+            <li>Wrote SQL transformation procedures; validated data parity between legacy and new schemas.</li>
+          </ul>
+          <div class="tech-row"><span class="t-badge">SQL</span><span class="t-badge">A2M5</span></div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-top">
+            <div class="proj-name">Corelearn — Learning Management System</div>
+            <span class="proj-period">May 2019</span>
+          </div>
+          <ul class="resp-list">
+            <li>Built course, payment, and user management APIs; optimized for security and cross-browser compatibility.</li>
+          </ul>
+          <div class="tech-row"><span class="t-badge">Java Servlet</span><span class="t-badge">MySQL</span><span class="t-badge">JUnit</span></div>
+        </div>
+      </div>
+
+      <!-- Certifications -->
+      <div>
+        <div class="sec-title">Education &amp; Certifications</div>
+        <div class="cert-card">
+          <span class="cert-year">2018</span>
+          <div>
+            <div class="cert-name">Iviettech — Java Programming Certificate</div>
+            <div class="cert-sub">Professional Java development training program</div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div><!-- /body -->
+</div><!-- /page -->
+</body>
+</html>
