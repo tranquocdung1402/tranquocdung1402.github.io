@@ -253,13 +253,13 @@ function SidebarContent({ activeSection, onNavClick, onPrint }) {
       <div className="mb-7">
         <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-700 mb-2 px-1">Core Technologies</p>
         <div className="flex flex-wrap gap-1.5">
-          {HERO_TECHS.map(({ name, Icon, color }) => (
+          {HERO_TECHS.map(({ name, Icon }) => (
             <div
               key={name}
-              className="flex items-center gap-1.5 px-2 py-1 rounded-lg text-[10px] font-medium text-slate-500"
-              style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+              className="flex items-center gap-1.5 px-2 py-1 rounded-lg text-[10px] font-medium text-slate-400"
+              style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}
             >
-              <Icon size={10} style={{ color }} />
+              <Icon size={10} className="text-slate-500" />
               {name}
             </div>
           ))}
