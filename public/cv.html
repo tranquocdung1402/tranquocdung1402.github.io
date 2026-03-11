@@ -507,13 +507,12 @@ body{font-family:'Inter',Arial,'Helvetica Neue',sans-serif;background:#CBD5E1;co
             <div class="proj-name">Marshall — Enterprise Contract Management Platform</div>
             <span class="proj-period">2022 – 2026</span>
           </div>
-          <p class="proj-desc">Large-scale enterprise contract management platform for LegalOn Technologies (Japan). Core backend services for file lifecycle management, async processing pipelines (12+ stages), bulk Excel export/import, and due-date notifications — multi-tenant, running on GKE.</p>
+          <p class="proj-desc">Enterprise contract management platform for LegalOn Technologies (Japan). Multi-tenant legal document processing system serving Japanese legal teams on GKE.</p>
           <ul class="resp-list">
-            <li>Designed <strong>Clean/Hexagonal Architecture</strong> across 8 modules (~1,500 Java files, 100+ UseCases, 15+ gRPC services); applied Strategy, Adapter, Factory, Composite, and Repository patterns.</li>
-            <li>Built event-driven contract pipeline (<em>VirusCheck → Parse → LanguageDetection → AI Extraction → File2Document</em>) via Pub/Sub with sync/async adapter orchestration and deadlock-prevention logic.</li>
-            <li>Implemented <strong>async Excel export</strong> and multi-threaded bulk CSV/Excel import: GCS Pre-Signed URL (V4, 30s) for direct upload, background workers with cancel support, idempotent batch processing (~500 records/batch).</li>
-            <li>Data access with <strong>MyBatis + HikariCP on AlloyDB</strong>; pessimistic locking (SELECT FOR UPDATE) and manual SqlSession transaction management for concurrent modifications.</li>
-            <li>Achieved <strong>85%+ test coverage</strong> — JUnit 5, Mockito, TestContainers, WireMock, ArchUnit; OpenTelemetry distributed tracing + structured JSON logging (Logstash Encoder).</li>
+            <li><strong>Team size:</strong> 20 &nbsp;·&nbsp; <strong>Role:</strong> Team Lead</li>
+            <li><strong>Environment:</strong> Armeria (Java 21), Spring Boot, gRPC, REST API, PostgreSQL, AlloyDB, GCP, GKE, Pub/Sub, Kubernetes, Terraform</li>
+            <li><strong>Responsibilities:</strong> Create DD, Implement Source, JUnit, Batch, Manage Team, Tech Lead</li>
+            <li><strong>Project scope:</strong> Design, CRUD, Manage team, Fix performance, Fix bug production. Renovate lib, Migration data, Migration proto (BSR &#8594; self-host)</li>
           </ul>
           <div class="tech-row">
             <span class="t-badge">Java 21</span><span class="t-badge">Spring Boot 3.x</span><span class="t-badge">Armeria</span><span class="t-badge">gRPC</span><span class="t-badge">MyBatis</span><span class="t-badge">AlloyDB</span><span class="t-badge">Pub/Sub</span><span class="t-badge">GCS</span><span class="t-badge">GKE</span><span class="t-badge">Terraform</span><span class="t-badge">ArgoCD</span><span class="t-badge">OpenTelemetry</span><span class="t-badge">Datadog</span><span class="t-badge">OPA/Rego</span><span class="t-badge">GitHub Actions</span>
