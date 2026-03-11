@@ -1,6 +1,6 @@
 export const CV_DATA = {
   name: 'TRAN QUOC DUNG',
-  title: 'SENIOR / TECH LEAD JAVA DEVELOPER',
+  title: 'SENIOR SOFTWARE DEVELOPER & TEAM LEAD',
   dob: '1993',
   gender: 'Male',
 
@@ -72,7 +72,7 @@ export const CV_DATA = {
   experience: [
     {
       company: 'BAP IT JSC',
-      role: 'Senior / Tech Lead Java Developer',
+      role: 'Senior Software Developer & Team Lead',
       period: '2022 – Present',
       projects: [
         {
