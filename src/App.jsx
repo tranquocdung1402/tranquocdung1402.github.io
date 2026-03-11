@@ -71,13 +71,10 @@ const PrintCV = forwardRef((_, ref) => {
         </ul>
       </div>
       <div className="pcv-section">
-        <div className="pcv-section-title">Technical Skills</div>
-        {d.techCategories.map((cat, i) => (
-          <div key={i} className="pcv-skill-row">
-            <span className="pcv-skill-cat">{cat.category}:</span>
-            {cat.items.map((item, j) => <span key={j} className="pcv-skill-badge">{item}</span>)}
-          </div>
-        ))}
+        <div className="pcv-section-title">Core Technologies</div>
+        <div className="pcv-skill-row">
+          {d.coreTech.map((item, i) => <span key={i} className="pcv-skill-badge">{item}</span>)}
+        </div>
       </div>
       <div className="pcv-section">
         <div className="pcv-section-title">Professional Experience</div>
