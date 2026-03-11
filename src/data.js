@@ -27,11 +27,9 @@ export const CV_DATA = {
   ],
 
   coreTech: [
-    'Java 21', 'Spring Boot 3.x', 'Armeria (gRPC)', 'MyBatis',
-    'GCP', 'Kubernetes (GKE)', 'Terraform', 'ArgoCD', 'Pub/Sub',
-    'PostgreSQL', 'AlloyDB', 'MySQL',
-    'GitHub Actions', 'Docker',
-    'OpenTelemetry', 'Datadog', 'JUnit 5', 'Mockito',
+    'Java', 'Golang', 'Python', 'ReactJS', 'VueJS',
+    'Spring Boot', 'SQL / NoSQL', 'GCP & Firebase',
+    'AI-Native Coding', 'Microservices & gRPC',
   ],
 
   experience: [

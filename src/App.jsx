@@ -6,7 +6,7 @@ import {
   ChevronDown, ChevronUp, Calendar, Award, Code2,
   Cpu, Database, TestTube2, Sparkles, Menu, X,
   Coffee, Terminal, Braces, LayoutGrid, Smartphone,
-  ArrowUpRight,
+  ArrowUpRight, Network,
 } from 'lucide-react'
 import { CV_DATA } from './data'
 
@@ -35,12 +35,16 @@ const CAT_ICON_MAP = {
 }
 
 const HERO_TECHS = [
-  { name: 'Java',    Icon: Coffee,     color: '#f89820' },
-  { name: 'Golang',  Icon: Terminal,   color: '#00acd7' },
-  { name: 'Python',  Icon: Braces,     color: '#3776ab' },
-  { name: 'ReactJS', Icon: LayoutGrid, color: '#61dafb' },
-  { name: 'VueJS',   Icon: LayoutGrid, color: '#42b883' },
-  { name: 'Native',  Icon: Smartphone, color: '#a78bfa' },
+  { name: 'Java',                 Icon: Coffee,     color: '#f89820' },
+  { name: 'Golang',               Icon: Code2,      color: '#00acd7' },
+  { name: 'Python',               Icon: Terminal,   color: '#3776ab' },
+  { name: 'ReactJS',              Icon: Braces,     color: '#61dafb' },
+  { name: 'VueJS',                Icon: LayoutGrid, color: '#42b883' },
+  { name: 'Spring Boot',          Icon: Zap,        color: '#6db33f' },
+  { name: 'SQL / NoSQL',          Icon: Database,   color: '#336791' },
+  { name: 'GCP & Firebase',       Icon: Cloud,      color: '#4285f4' },
+  { name: 'AI-Native Coding',     Icon: Sparkles,   color: '#a78bfa' },
+  { name: 'Microservices & gRPC', Icon: Network,    color: '#64748b' },
 ]
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -247,7 +251,7 @@ function SidebarContent({ activeSection, onNavClick, onPrint }) {
 
       {/* Core tech chips */}
       <div className="mb-7">
-        <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-700 mb-2 px-1">Core Tech</p>
+        <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-slate-700 mb-2 px-1">Core Technologies</p>
         <div className="flex flex-wrap gap-1.5">
           {HERO_TECHS.map(({ name, Icon, color }) => (
             <div
@@ -616,47 +620,25 @@ function TechStack() {
       <div ref={ref} className="section-fade">
         <SectionHeading label="Tools & Languages" title="Tech Stack" />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
-          {CV_DATA.techCategories.map((cat, i) => {
-            const CatIcon = CAT_ICON_MAP[cat.category] || Code2
-            const palette = BADGE_BG[cat.color] || BADGE_BG.blue
-
-            return (
+        <div className="grid grid-cols-2 sm:grid-cols-3 xl:grid-cols-5 gap-3">
+          {HERO_TECHS.map(({ name, Icon, color }) => (
+            <div
+              key={name}
+              className="flex flex-col items-center gap-2 rounded-2xl p-4 transition-all duration-200 cursor-default"
+              style={{
+                background: 'rgba(255,255,255,0.02)',
+                border: '1px solid rgba(255,255,255,0.05)',
+              }}
+            >
               <div
-                key={i}
-                className="rounded-2xl p-4 transition-all duration-200"
-                style={{
-                  background: 'rgba(255,255,255,0.02)',
-                  border: '1px solid rgba(255,255,255,0.05)',
-                }}
+                className="w-10 h-10 rounded-xl flex items-center justify-center"
+                style={{ background: `${color}18`, border: `1px solid ${color}33` }}
               >
-                <div className="flex items-center gap-2 mb-3">
-                  <div
-                    className="w-7 h-7 rounded-lg flex items-center justify-center"
-                    style={{ background: palette.bg, border: `1px solid ${palette.border}` }}
-                  >
-                    <CatIcon size={13} style={{ color: palette.color }} />
-                  </div>
-                  <p className="text-slate-300 font-semibold text-sm">{cat.category}</p>
-                </div>
-                <div className="flex flex-wrap gap-1.5">
-                  {cat.items.map((item, j) => (
-                    <span
-                      key={j}
-                      className="text-xs font-medium px-2.5 py-1 rounded-lg cursor-default transition-all duration-150"
-                      style={{
-                        background: palette.bg,
-                        border: `1px solid ${palette.border}`,
-                        color: palette.color,
-                      }}
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
+                <Icon size={18} style={{ color }} />
               </div>
-            )
-          })}
+              <p className="text-slate-300 font-medium text-xs text-center">{name}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
