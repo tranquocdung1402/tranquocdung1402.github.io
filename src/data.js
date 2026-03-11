@@ -26,32 +26,12 @@ export const CV_DATA = {
     'Observability: OpenTelemetry distributed tracing, Datadog, SLO/burn-rate alerting. 85%+ test coverage across projects.',
   ],
 
-  techCategories: [
-    {
-      category: 'Languages & Frameworks',
-      color: 'blue',
-      items: ['Java 21', 'Spring Boot 3.x', 'Armeria (gRPC)', 'MyBatis'],
-    },
-    {
-      category: 'Cloud & Infrastructure',
-      color: 'sky',
-      items: ['GCP', 'Kubernetes (GKE)', 'Terraform', 'ArgoCD', 'Pub/Sub'],
-    },
-    {
-      category: 'Databases',
-      color: 'emerald',
-      items: ['PostgreSQL', 'AlloyDB', 'MySQL'],
-    },
-    {
-      category: 'CI/CD & DevOps',
-      color: 'teal',
-      items: ['GitHub Actions', 'Docker', 'SonarCloud', 'OPA/Rego'],
-    },
-    {
-      category: 'Observability & Testing',
-      color: 'amber',
-      items: ['OpenTelemetry', 'Datadog', 'JUnit 5', 'Mockito'],
-    },
+  coreTech: [
+    'Java 21', 'Spring Boot 3.x', 'Armeria (gRPC)', 'MyBatis',
+    'GCP', 'Kubernetes (GKE)', 'Terraform', 'ArgoCD', 'Pub/Sub',
+    'PostgreSQL', 'AlloyDB', 'MySQL',
+    'GitHub Actions', 'Docker',
+    'OpenTelemetry', 'Datadog', 'JUnit 5', 'Mockito',
   ],
 
   experience: [
