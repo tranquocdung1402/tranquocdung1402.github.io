@@ -77,7 +77,7 @@ export const CV_DATA = {
       projects: [
         {
           name: 'Marshall — Enterprise Contract Management Platform',
-          period: '2022 – 2026',
+          period: '2023 – 2026',
           description:
             'Enterprise contract management platform for LegalOn Technologies (Japan). Multi-tenant legal document processing system serving Japanese legal teams on GKE.',
           responsibilities: [
@@ -90,7 +90,7 @@ export const CV_DATA = {
         },
         {
           name: 'Freekey — Digital Car Key SDK',
-          period: '2022',
+          period: '2022 – 2023',
           description:
             'SDK for encrypting and unlocking car doors via mobile app integration, including server-side key management and device communication.',
           responsibilities: [
