@@ -28,29 +28,14 @@ export const CV_DATA = {
 
   techCategories: [
     {
-      category: 'Core Languages & Runtimes',
+      category: 'Languages & Frameworks',
       color: 'blue',
-      items: ['Java 21', 'Virtual Threads', 'Records', 'SQL'],
-    },
-    {
-      category: 'Frameworks & APIs',
-      color: 'violet',
-      items: ['Spring Boot 3.x', 'Armeria (gRPC)', 'Protocol Buffers', 'MyBatis'],
+      items: ['Java 21', 'Spring Boot 3.x', 'Armeria (gRPC)', 'MyBatis'],
     },
     {
       category: 'Cloud & Infrastructure',
       color: 'sky',
-      items: ['GCP', 'Kubernetes (GKE)', 'Terraform', 'ArgoCD GitOps', 'Pub/Sub', 'AlloyDB'],
-    },
-    {
-      category: 'CI/CD & DevOps',
-      color: 'teal',
-      items: ['GitHub Actions', 'OPA / Rego', 'SonarCloud', 'Docker'],
-    },
-    {
-      category: 'Observability & Security',
-      color: 'amber',
-      items: ['OpenTelemetry', 'Datadog', 'Workload Identity', 'pgcrypto', 'SLO Alerting'],
+      items: ['GCP', 'Kubernetes (GKE)', 'Terraform', 'ArgoCD', 'Pub/Sub'],
     },
     {
       category: 'Databases',
@@ -58,14 +43,14 @@ export const CV_DATA = {
       items: ['PostgreSQL', 'AlloyDB', 'MySQL'],
     },
     {
-      category: 'Testing',
-      color: 'rose',
-      items: ['JUnit 5', 'Mockito', 'WireMock', 'Integration Testing'],
+      category: 'CI/CD & DevOps',
+      color: 'teal',
+      items: ['GitHub Actions', 'Docker', 'SonarCloud', 'OPA/Rego'],
     },
     {
-      category: 'AI & Productivity',
-      color: 'purple',
-      items: ['GitHub Copilot', 'Claude AI', 'Cursor AI', 'IntelliJ IDEA'],
+      category: 'Observability & Testing',
+      color: 'amber',
+      items: ['OpenTelemetry', 'Datadog', 'JUnit 5', 'Mockito'],
     },
   ],
 
