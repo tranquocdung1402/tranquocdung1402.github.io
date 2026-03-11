@@ -1,7 +1,7 @@
 export const CV_DATA = {
   name: 'TRAN QUOC DUNG',
   title: 'SENIOR SOFTWARE DEVELOPER & TEAM LEAD',
-  dob: '1993',
+  dob: '14/02/1993',
   gender: 'Male',
 
   contact: {
