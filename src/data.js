@@ -79,15 +79,14 @@ export const CV_DATA = {
           name: 'Marshall — Enterprise Contract Management Platform',
           period: '2022 – 2026',
           description:
-            'Large-scale enterprise contract management platform for LegalOn Technologies (Japan). Core backend services handling file lifecycle management, async contract processing pipelines (12+ stages: virus scan, language detection, AI extraction, PDF generation), bulk Excel export/import, and due-date notifications — serving multi-tenant legal teams on GKE.',
+            'Enterprise contract management platform for LegalOn Technologies (Japan). Multi-tenant legal document processing system serving Japanese legal teams on GKE.',
           responsibilities: [
-            'Designed Clean/Hexagonal Architecture across 8 modules (~1,500 Java files, 100+ UseCases, 15+ gRPC services); applied Strategy, Adapter, Factory, Composite, and Repository patterns for extensible async processing pipelines.',
-            'Built event-driven contract processing pipeline (VirusCheck → MediaType → Parse → LanguageDetection → AI Extraction → File2Document) using Pub/Sub with sync/async adapter orchestration and deadlock-prevention logic.',
-            'Implemented async Excel export and multi-threaded bulk CSV/Excel import APIs: GCS Pre-Signed URL (V4, 30s) for direct client upload, background workers with cancel support, and idempotent batch processing (~500 records/batch).',
-            'Built data access layer with MyBatis + HikariCP on PostgreSQL/AlloyDB; applied pessimistic locking (SELECT FOR UPDATE) and manual SqlSession transaction management for concurrent contract modifications.',
-            'Achieved 85%+ test coverage with JUnit 5, Mockito, TestContainers, WireMock, and ArchUnit; integrated OpenTelemetry distributed tracing and structured JSON logging (Logstash Encoder) across all services.',
+            'Team size: 20  ·  Role: Team Lead',
+            'Environment: Armeria (Java 21), Spring Boot, gRPC, REST API, PostgreSQL, AlloyDB, GCP, GKE, Pub/Sub, Kubernetes, Terraform',
+            'Responsibilities: Create DD, Implement Source, JUnit, Batch, Manage Team, Tech Lead',
+            'Project scope: Design, CRUD, Manage team, Fix performance, Fix bug production. Renovate lib, Migration data, Migration proto (BSR → self-host)',
           ],
-          technologies: ['Java 21', 'Spring Boot 3.x', 'Armeria', 'gRPC', 'Protocol Buffers', 'MyBatis', 'HikariCP', 'PostgreSQL', 'AlloyDB', 'Google Cloud Pub/Sub', 'Google Cloud Storage', 'GKE', 'Kubernetes', 'Terraform', 'ArgoCD', 'OpenTelemetry', 'Datadog', 'JUnit 5', 'Mockito', 'TestContainers', 'WireMock', 'ArchUnit', 'GitHub Actions', 'OPA/Rego'],
+          technologies: ['Java 21', 'Spring Boot 3.x', 'Armeria', 'gRPC', 'Protocol Buffers', 'MyBatis', 'PostgreSQL', 'AlloyDB', 'Pub/Sub', 'GCS', 'GKE', 'Kubernetes', 'Terraform', 'ArgoCD', 'OpenTelemetry', 'Datadog', 'GitHub Actions', 'OPA/Rego'],
         },
         {
           name: 'Freekey — Digital Car Key SDK',
