@@ -15,7 +15,7 @@ export const CV_DATA = {
     { value: '8+',      label: 'Years Experience' },
     { value: '6+',      label: 'Projects Delivered' },
     { value: '85%+',    label: 'Test Coverage' },
-    { value: 'Tech Lead', label: 'Current Role' },
+    { value: 'Team Lead', label: 'Current Role' },
   ],
 
   summary: [
@@ -83,7 +83,7 @@ export const CV_DATA = {
           responsibilities: [
             'Team size: 20  ·  Role: Team Lead',
             'Environment: Armeria (Java 21), Spring Boot, gRPC, REST API, PostgreSQL, AlloyDB, GCP, GKE, Pub/Sub, Kubernetes, Terraform',
-            'Responsibilities: Create DD, Implement Source, JUnit, Batch, Manage Team, Tech Lead',
+            'Responsibilities: Create DD, Implement Source, JUnit, Batch, Manage Team, Team Lead',
             'Project scope: Design, CRUD, Manage team, Fix performance, Fix bug production. Renovate lib, Migration data, Migration proto (BSR → self-host)',
           ],
           technologies: ['Java 21', 'Spring Boot 3.x', 'Armeria', 'gRPC', 'Protocol Buffers', 'MyBatis', 'PostgreSQL', 'AlloyDB', 'Pub/Sub', 'GCS', 'GKE', 'Kubernetes', 'Terraform', 'ArgoCD', 'OpenTelemetry', 'Datadog', 'GitHub Actions', 'OPA/Rego'],
@@ -151,6 +151,19 @@ export const CV_DATA = {
       period: '2018',
       institution: 'Iviettech',
       subject: '',
+    },
+  ],
+
+  honors: [
+    {
+      year: '2025',
+      title: 'High Performance Leader Award',
+      issuer: 'BAP IT JSC',
+    },
+    {
+      year: '2025',
+      title: 'High Performance Project Award',
+      issuer: 'BAP IT JSC',
     },
   ],
 
