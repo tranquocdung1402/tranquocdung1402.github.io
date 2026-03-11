@@ -44,7 +44,7 @@ export const CV_DATA = {
           description:
             'Enterprise contract management platform for LegalOn Technologies (Japan). Multi-tenant legal document processing system serving Japanese legal teams on GKE.',
           responsibilities: [
-            'Team size: 20  ·  Role: Team Lead',
+            'Team size: 10  ·  Role: Team Lead',
             'Environment: Armeria (Java 21), Spring Boot, gRPC, REST API, PostgreSQL, AlloyDB, GCP, GKE, Pub/Sub, Kubernetes, Terraform',
             'Responsibilities: Create DD, Implement Source, JUnit, Batch, Manage Team, Team Lead',
             'Project scope: Design, CRUD, Manage team, Fix performance, Fix bug production. Renovate lib, Migration data, Migration proto (BSR → self-host)',
