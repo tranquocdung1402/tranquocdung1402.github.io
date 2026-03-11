@@ -6,7 +6,7 @@ import {
   ChevronDown, ChevronUp, Calendar, Award, Code2,
   Cpu, Database, TestTube2, Sparkles, Menu, X,
   Coffee, Terminal, Braces, LayoutGrid, Smartphone,
-  ArrowUpRight, Network,
+  ArrowUpRight, Network, User,
 } from 'lucide-react'
 import { CV_DATA } from './data'
 
@@ -61,7 +61,8 @@ const PrintCV = forwardRef((_, ref) => {
           {d.contact.email    && <span>✉ {d.contact.email}</span>}
           {d.contact.phone    && <span>✆ {d.contact.phone}</span>}
           {d.contact.location && <span>⌖ {d.contact.location}</span>}
-          {d.contact.github   && <span>⌥ {d.contact.github}</span>}
+          <span>Born: {d.dob}</span>
+          <span>Gender: {d.gender}</span>
         </div>
       </div>
       <div className="pcv-section">
@@ -147,7 +148,8 @@ function SidebarContent({ activeSection, onNavClick, onPrint }) {
     { Icon: Mail,   value: c.email,    href: `mailto:${c.email}`,          title: c.email    },
     { Icon: Phone,  value: c.phone,    href: `tel:${c.phone}`,             title: c.phone    },
     { Icon: MapPin, value: c.location, href: null,                          title: c.location },
-    { Icon: Github, value: c.github,   href: c.github ? `https://${c.github}` : null, title: c.github },
+    { Icon: Calendar, value: CV_DATA.dob,    href: null, title: `Born: ${CV_DATA.dob}` },
+    { Icon: User,     value: CV_DATA.gender, href: null, title: CV_DATA.gender },
   ].filter(i => i.value)
 
   return (
@@ -706,7 +708,8 @@ function Contact({ onPrint }) {
     { Icon: Mail,   label: 'Email',    value: c.email,    href: `mailto:${c.email}` },
     { Icon: Phone,  label: 'Phone',    value: c.phone,    href: `tel:${c.phone}` },
     { Icon: MapPin, label: 'Location', value: c.location, href: null },
-    { Icon: Github, label: 'GitHub',   value: c.github,   href: c.github ? `https://${c.github}` : null },
+    { Icon: Calendar, label: 'Date of Birth', value: CV_DATA.dob,    href: null },
+    { Icon: User,     label: 'Gender',        value: CV_DATA.gender, href: null },
   ].filter(i => i.value)
 
   return (

@@ -8,7 +8,6 @@ export const CV_DATA = {
     email: 'tranquocdung1402@gmail.com',
     phone: '+84 905 242 630',
     location: '06 Hung Hoa 6, Hoa Cuong, Da Nang, Vietnam',
-    github: 'github.com/tranquocdung1402',
   },
 
   stats: [
