@@ -1,8 +1,9 @@
 export const CV_DATA = {
   name: 'TRAN QUOC DUNG',
-  title: 'SENIOR SOFTWARE DEVELOPER & TEAM LEAD',
+  title: 'SENIOR SOFTWARE ENGINEER & ENGINEERING TEAM LEAD',
   dob: '14/02/1993',
   gender: 'Male',
+  status: 'Open to Work',
 
   contact: {
     email: 'tranquocdung1402@gmail.com',
@@ -12,17 +13,16 @@ export const CV_DATA = {
 
   stats: [
     { value: '8+',      label: 'Years Experience' },
-    { value: '6+',      label: 'Projects Delivered' },
+    { value: '10',      label: 'Engineers Led' },
     { value: '85%+',    label: 'Test Coverage' },
-    { value: 'Team Lead', label: 'Current Role' },
+    { value: '~40%',    label: 'Latency Reduced' },
   ],
 
   summary: [
-    '8+ years in backend development, microservices design, and cloud-native deployment on GCP.',
-    'Expert in Java 21 (Virtual Threads, Records), Spring Boot 3.x, Armeria gRPC, MyBatis, and PostgreSQL/AlloyDB.',
-    'Clean/Hexagonal Architecture, event-driven pipelines (Pub/Sub), async batch processing, and GCS Signed URL file management.',
-    'Infrastructure as Code: Terraform, Kubernetes (GKE), ArgoCD GitOps; CI/CD with GitHub Actions and OPA/Rego security policies.',
-    'Observability: OpenTelemetry distributed tracing, Datadog, SLO/burn-rate alerting. 85%+ test coverage across projects.',
+    '8+ years of backend engineering experience designing microservices, cloud-native systems, and distributed event-driven architectures on GCP.',
+    'Expert in Java 21 (Virtual Threads, Records), Spring Boot 3.x, Armeria gRPC, MyBatis, PostgreSQL/AlloyDB, Redis, Elasticsearch, and multi-tenant SaaS architecture.',
+    'Led a 10-engineer team delivering a mission-critical enterprise contract management platform for a Japanese legal-tech company (LegalOn Technologies), consistently hitting 85%+ test coverage across all services.',
+    'Hands-on with Infrastructure as Code (Terraform, GKE, ArgoCD GitOps), CI/CD pipelines (GitHub Actions), OPA/Rego policy enforcement, and OpenTelemetry observability with Datadog SLO alerting.',
   ],
 
   coreTech: [
@@ -31,60 +31,104 @@ export const CV_DATA = {
     'AI-Native Coding', 'Microservices & gRPC',
   ],
 
+  // Full categorized technical skills (from CV)
+  skillGroups: [
+    {
+      category: 'Core Languages & Runtimes',
+      skills: ['Java 21', 'Golang', 'Python', 'SQL', 'JavaScript / TypeScript'],
+    },
+    {
+      category: 'Frameworks & APIs',
+      skills: ['Spring Boot 3.x', 'Spring Security', 'Spring Data', 'Spring Cloud', 'Armeria', 'gRPC', 'MyBatis', 'ReactJS', 'VueJS'],
+    },
+    {
+      category: 'Databases',
+      skills: ['PostgreSQL', 'AlloyDB', 'MySQL', 'Redis', 'Elasticsearch', 'NoSQL'],
+    },
+    {
+      category: 'Cloud & Infrastructure',
+      skills: ['GCP (GKE, Pub/Sub, GCS, Firebase)', 'Kubernetes', 'Terraform', 'ArgoCD', 'Docker', 'AWS (familiar)'],
+    },
+    {
+      category: 'Messaging & Architecture',
+      skills: ['GCP Pub/Sub', 'RabbitMQ', 'Microservices', 'Hexagonal / Clean Architecture', 'Domain-Driven Design', 'BFF', 'Event-Driven'],
+    },
+    {
+      category: 'Observability & Security',
+      skills: ['OpenTelemetry', 'Datadog', 'SLO / Burn-rate Alerting', 'OAuth2', 'OPA/Rego', 'OWASP'],
+    },
+    {
+      category: 'CI/CD & DevOps',
+      skills: ['GitHub Actions', 'ArgoCD GitOps', 'Zero-downtime Deployment'],
+    },
+    {
+      category: 'AI & Productivity Tools',
+      skills: ['Claude Code', 'Codex', 'Gemini CLI', 'Custom AI Agents & MCP', 'Multi-agent Orchestration'],
+    },
+    {
+      category: 'Practices',
+      skills: ['Agile / Scrum', 'TDD (85%+ coverage)', 'Code Review', 'API Design', 'System Scalability'],
+    },
+  ],
+
   experience: [
     {
       company: 'BAP IT JSC',
-      role: 'Senior Software Developer & Team Lead',
-      period: '2022 – Present',
+      role: 'Engineering Team Lead & Senior Software Engineer',
+      period: 'Nov 2022 – Present',
+      location: 'Da Nang, Vietnam  ·  Client: LegalOn Technologies, Japan',
       projects: [
         {
           name: 'Marshall — Enterprise Contract Management Platform',
-          period: '2023 – 2026',
+          period: 'Mar 2023 – Present',
           description:
-            'Enterprise contract management platform for LegalOn Technologies (Japan). Multi-tenant legal document processing system serving Japanese legal teams on GKE.',
+            'Multi-tenant legal document processing system on GKE for LegalOn Technologies (Japan). Led a 10-engineer team from design to production as Team Lead.',
           responsibilities: [
-            'Team size: 10  ·  Role: Team Lead',
-            'Environment: Armeria (Java 21), Spring Boot, gRPC, REST API, PostgreSQL, AlloyDB, GCP, GKE, Pub/Sub, Kubernetes, Terraform',
-            'Responsibilities: Create DD, Implement Source, JUnit, Batch, Manage Team, Team Lead',
-            'Project scope: Design, CRUD, Manage team, Fix performance, Fix bug production. Renovate lib, Migration data, Migration proto (BSR → self-host)',
+            'Architected and delivered a multi-tenant contract management platform on GKE; led a 10-engineer team from design to production.',
+            'Built event-driven pipelines with GCP Pub/Sub, OAuth2/Spring Security auth, Redis caching, and Elasticsearch full-text search — reduced processing latency by ~40%.',
+            'Maintained 85%+ JUnit test coverage; enforced CI/CD quality gates via GitHub Actions; set up OpenTelemetry + Datadog SLO alerting across 10+ microservices.',
+            'Mentored engineers on hexagonal architecture; migrated stack to Java 21 Virtual Threads + Spring Boot 3.x, cutting thread contention under peak load.',
           ],
-          technologies: ['Java 21', 'Spring Boot 3.x', 'Armeria', 'gRPC', 'Protocol Buffers', 'MyBatis', 'PostgreSQL', 'AlloyDB', 'Pub/Sub', 'GCS', 'GKE', 'Kubernetes', 'Terraform', 'ArgoCD', 'OpenTelemetry', 'Datadog', 'GitHub Actions', 'OPA/Rego'],
+          technologies: ['Java 21', 'Spring Boot 3.x', 'Armeria', 'gRPC', 'MyBatis', 'PostgreSQL', 'AlloyDB', 'Redis', 'Elasticsearch', 'Pub/Sub', 'GKE', 'Terraform', 'ArgoCD', 'Datadog', 'GitHub Actions'],
         },
         {
           name: 'Freekey — Digital Car Key SDK',
-          period: '2022 – 2023',
+          period: 'Nov 2022 – Mar 2023',
           description:
-            'SDK for encrypting and unlocking car doors via mobile app integration, including server-side key management and device communication.',
+            'Server-side key management SDK for mobile car-door encryption, covering the digital key lifecycle and device communication.',
           responsibilities: [
-            'Developed admin and user-facing APIs for digital key management.',
-            'Ensured security, performance, and maintainability through code review and JUnit test suites.',
+            'Developed RESTful APIs for digital key lifecycle (provisioning, revocation, management).',
+            'Enforced security-by-design with JUnit test suites and code review gates.',
           ],
-          technologies: ['Java Spring', 'MySQL'],
+          technologies: ['Java', 'Spring Boot', 'MySQL', 'JUnit'],
         },
       ],
     },
     {
-      company: 'ARCH VIETNAM CO., LTD',
-      role: 'Java Developer',
-      period: '2018 – 2022',
+      company: 'ARCH Vietnam Co., Ltd',
+      role: 'Java Backend Developer',
+      period: 'Jun 2018 – Oct 2022',
+      location: 'Da Nang, Vietnam',
       projects: [
         {
-          name: 'TOPPAN — Printing Website',
+          name: 'TOPPAN — Enterprise Printing Platform',
           period: '2022',
-          description: 'Full-featured printing website with admin and user-facing modules.',
+          description: 'B2B printing platform with admin and user-facing modules.',
           responsibilities: [
-            'Built APIs and user-facing features; wrote test cases for functionality and performance.',
+            'Built admin and user APIs for a B2B printing platform.',
+            'Wrote performance test suites to validate throughput under load.',
           ],
-          technologies: ['Java', 'A2M5'],
+          technologies: ['Java', 'SQL'],
         },
         {
-          name: 'IBM — Database Migration',
+          name: 'IBM — Legacy Database Migration',
           period: '2022',
-          description: 'Migrated data from a legacy database to a new schema using SQL procedures and functions.',
+          description: 'Migration of a legacy database schema to a new target schema using SQL procedures.',
           responsibilities: [
-            'Wrote SQL transformation procedures; validated data parity between old and new schemas.',
+            'Wrote SQL transformation procedures to migrate legacy schema.',
+            'Validated 100% data parity between source and target.',
           ],
-          technologies: ['SQL', 'A2M5'],
+          technologies: ['SQL'],
         },
         {
           name: 'CR — Software Maintenance',
@@ -93,14 +137,15 @@ export const CV_DATA = {
           responsibilities: [
             'Added new features and modified existing ones per customer requirements.',
           ],
-          technologies: ['Java', 'A2M5'],
+          technologies: ['Java', 'SQL'],
         },
         {
           name: 'Corelearn — Learning Management System',
           period: 'May 2019',
           description: 'E-learning platform supporting courses, payments, comments, and user management.',
           responsibilities: [
-            'Built APIs for courses, payments, and user features; optimized for security and cross-browser compatibility.',
+            'Developed course, payment, and user management APIs with Java Servlet.',
+            'Applied security best practices and ensured cross-browser compatibility.',
           ],
           technologies: ['Java Servlet', 'MySQL', 'JUnit'],
         },
@@ -111,8 +156,9 @@ export const CV_DATA = {
   certifications: [
     {
       period: '2018',
-      institution: 'Iviettech',
-      subject: '',
+      title: 'Java Professional Development Certificate',
+      institution: 'Iviettech Training Institute',
+      subject: 'Comprehensive Java programming curriculum covering OOP, data structures, design patterns, and enterprise development.',
     },
   ],
 
@@ -121,11 +167,13 @@ export const CV_DATA = {
       year: '2025',
       title: 'High Performance Leader Award',
       issuer: 'BAP IT JSC',
+      desc: 'Recognized for outstanding leadership across a 10-engineer team, on-time delivery of the Marshall platform, and cross-functional collaboration with Japanese stakeholders.',
     },
     {
       year: '2025',
       title: 'High Performance Project Award',
       issuer: 'BAP IT JSC',
+      desc: 'Awarded to the Marshall project team for exceptional delivery quality, technical innovation, and measurable client satisfaction improvement.',
     },
   ],
 
@@ -143,7 +191,7 @@ export const CV_DATA = {
     {
       icon: 'ShieldCheck',
       title: 'Quality & Security',
-      desc: 'OPA/Rego, SonarCloud, pgcrypto, Workload Identity, 85%+ test coverage.',
+      desc: 'OAuth2, OPA/Rego policy enforcement, OWASP best practices, 85%+ test coverage.',
     },
     {
       icon: 'Activity',
@@ -153,12 +201,12 @@ export const CV_DATA = {
     {
       icon: 'Users',
       title: 'Technical Leadership',
-      desc: 'Mentoring, code reviews, Agile/Scrum delivery, AI-assisted workflows.',
+      desc: 'Mentoring a 10-engineer team, code reviews, Agile/Scrum delivery, AI-assisted workflows.',
     },
     {
       icon: 'Zap',
       title: 'Performance Engineering',
-      desc: 'Java 21 Virtual Threads, async I/O, HikariCP tuning, query optimization.',
+      desc: 'Java 21 Virtual Threads, async I/O, Redis caching, Elasticsearch search, ~40% latency reduction.',
     },
   ],
 }

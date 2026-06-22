@@ -26,12 +26,13 @@ const BADGE_BG = {
 const CAT_ICON_MAP = {
   'Core Languages & Runtimes':    Cpu,
   'Frameworks & APIs':            Code2,
-  'Cloud & Infrastructure':       Cloud,
-  'CI/CD & DevOps':              Zap,
-  'Observability & Security':     ShieldCheck,
   'Databases':                    Database,
-  'Testing':                      TestTube2,
+  'Cloud & Infrastructure':       Cloud,
+  'Messaging & Architecture':     Network,
+  'Observability & Security':     ShieldCheck,
+  'CI/CD & DevOps':              Zap,
   'AI & Productivity Tools':      Sparkles,
+  'Practices':                    TestTube2,
 }
 
 const HERO_TECHS = [
@@ -72,17 +73,20 @@ const PrintCV = forwardRef((_, ref) => {
         </ul>
       </div>
       <div className="pcv-section">
-        <div className="pcv-section-title">Core Technologies</div>
-        <div className="pcv-skill-row">
-          {d.coreTech.map((item, i) => <span key={i} className="pcv-skill-badge">{item}</span>)}
-        </div>
+        <div className="pcv-section-title">Technical Skills</div>
+        {d.skillGroups.map((g, i) => (
+          <p key={i} className="pcv-skill-line">
+            <strong>{g.category}:</strong> {g.skills.join(', ')}
+          </p>
+        ))}
       </div>
       <div className="pcv-section">
         <div className="pcv-section-title">Professional Experience</div>
         {d.experience.map((exp, ei) => (
           <div key={ei} style={{ marginBottom: '12px' }}>
             <p className="pcv-job-header">
-              {exp.company} &nbsp;|&nbsp; {exp.role} &nbsp;|&nbsp; {exp.period}
+              {exp.role} &nbsp;|&nbsp; {exp.company} &nbsp;|&nbsp; {exp.period}
+              {exp.location ? <span style={{ display: 'block', fontWeight: 400, fontSize: '9px', color: '#64748b', marginTop: '2px' }}>{exp.location}</span> : null}
             </p>
             {exp.projects.map((proj, i) => (
               <div key={i} className="pcv-project">
@@ -103,11 +107,20 @@ const PrintCV = forwardRef((_, ref) => {
         ))}
       </div>
       <div className="pcv-section">
-        <div className="pcv-section-title">Certifications</div>
+        <div className="pcv-section-title">Education & Certifications</div>
         {d.certifications.map((cert, i) => (
           <p key={i} className="pcv-cert-row">
-            {cert.period} — <strong>{cert.institution}</strong>
-            {cert.subject ? ` — ${cert.subject}` : ''}
+            <strong>{cert.title || cert.institution}</strong> ({cert.period})
+            {cert.institution && cert.title ? ` — ${cert.institution}` : ''}
+            {cert.subject ? ` · ${cert.subject}` : ''}
+          </p>
+        ))}
+      </div>
+      <div className="pcv-section">
+        <div className="pcv-section-title">Honors & Recognition</div>
+        {d.honors.map((h, i) => (
+          <p key={i} className="pcv-cert-row">
+            <strong>{h.title}</strong> — {h.issuer} ({h.year}){h.desc ? ` · ${h.desc}` : ''}
           </p>
         ))}
       </div>
@@ -139,6 +152,7 @@ const NAV_ITEMS = [
   { id: 'experience',     label: 'Experience'     },
   { id: 'tech-stack',     label: 'Tech Stack'     },
   { id: 'certifications', label: 'Certifications' },
+  { id: 'honors',         label: 'Honors'         },
   { id: 'contact',        label: 'Contact'        },
 ]
 
@@ -328,7 +342,7 @@ function Sidebar({ activeSection, onPrint }) {
           </div>
           <div>
             <p className="text-white font-bold text-sm leading-none">Tran Quoc Dung</p>
-            <p className="text-indigo-400 text-[10px] mt-0.5">Senior Java Developer</p>
+            <p className="text-indigo-400 text-[10px] mt-0.5">Senior Software Engineer & Team Lead</p>
           </div>
         </div>
         <button onClick={() => setMobileOpen(o => !o)} className="text-slate-400 hover:text-white p-1">
@@ -405,7 +419,7 @@ function About() {
                 Tran Quoc Dung
               </span>
               <span className="block text-xl font-bold mt-3 tracking-wide" style={{ color: '#475569' }}>
-                Senior Java / Tech Lead Developer
+                Senior Software Engineer & Engineering Team Lead
               </span>
             </h1>
             <p className="text-slate-400 text-[15px] leading-relaxed">
@@ -523,6 +537,11 @@ function Experience() {
                 <p className="text-xs mt-2 flex items-center gap-1" style={{ color: activeTab === i ? '#6366f1' : '#1e293b' }}>
                   <Calendar size={10} /> {e.period}
                 </p>
+                {e.location && (
+                  <p className="text-[10px] mt-1.5 flex items-start gap-1 leading-tight" style={{ color: activeTab === i ? '#64748b' : '#1e293b' }}>
+                    <MapPin size={10} className="mt-px shrink-0" /> {e.location}
+                  </p>
+                )}
               </button>
             ))}
           </div>
@@ -639,6 +658,103 @@ function TechStack() {
             </div>
           ))}
         </div>
+
+        {/* ── Categorized technical skills ── */}
+        <div className="mt-12">
+          <SectionHeading label="Full Breakdown" title="Technical Skills" />
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {CV_DATA.skillGroups.map((g, i) => {
+              const Icon = CAT_ICON_MAP[g.category] || Code2
+              return (
+                <div
+                  key={i}
+                  className="rounded-2xl p-5 transition-all duration-200 cursor-default"
+                  style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = 'rgba(99,102,241,0.06)'
+                    e.currentTarget.style.border = '1px solid rgba(99,102,241,0.2)'
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.02)'
+                    e.currentTarget.style.border = '1px solid rgba(255,255,255,0.06)'
+                  }}
+                >
+                  <div className="flex items-center gap-2.5 mb-3">
+                    <div
+                      className="w-8 h-8 rounded-lg flex items-center justify-center shrink-0"
+                      style={{ background: 'rgba(99,102,241,0.12)', border: '1px solid rgba(99,102,241,0.15)' }}
+                    >
+                      <Icon size={15} style={{ color: '#818cf8' }} />
+                    </div>
+                    <p className="text-white font-bold text-sm">{g.category}</p>
+                  </div>
+                  <div className="flex flex-wrap gap-1.5">
+                    {g.skills.map((s, j) => (
+                      <span
+                        key={j}
+                        className="text-xs px-2.5 py-1 rounded-lg font-medium"
+                        style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)', color: '#818cf8' }}
+                      >
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+//  HONORS & RECOGNITION
+// ─────────────────────────────────────────────────────────────────────────────
+function Honors() {
+  const ref = useRef(null)
+  useFadeIn(ref)
+
+  return (
+    <section id="honors" className="px-8 py-16">
+      <div ref={ref} className="section-fade">
+        <SectionHeading label="Awards" title="Honors & Recognition" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {CV_DATA.honors.map((h, i) => (
+            <div
+              key={i}
+              className="rounded-2xl p-6 transition-all duration-200 cursor-default"
+              style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.06)' }}
+              onMouseEnter={e => {
+                e.currentTarget.style.background = 'rgba(251,191,36,0.04)'
+                e.currentTarget.style.border = '1px solid rgba(251,191,36,0.2)'
+              }}
+              onMouseLeave={e => {
+                e.currentTarget.style.background = 'rgba(255,255,255,0.02)'
+                e.currentTarget.style.border = '1px solid rgba(255,255,255,0.06)'
+              }}
+            >
+              <div className="flex items-center justify-between mb-3">
+                <div
+                  className="w-11 h-11 rounded-xl flex items-center justify-center shrink-0"
+                  style={{ background: 'rgba(251,191,36,0.08)', border: '1px solid rgba(251,191,36,0.15)' }}
+                >
+                  <Award size={18} style={{ color: '#fbbf24' }} />
+                </div>
+                <span
+                  className="text-xs font-bold px-3 py-1 rounded-full"
+                  style={{ background: 'rgba(251,191,36,0.08)', color: '#fbbf24', border: '1px solid rgba(251,191,36,0.15)' }}
+                >
+                  {h.year}
+                </span>
+              </div>
+              <p className="text-white font-bold text-sm">{h.title}</p>
+              <p className="text-indigo-400 text-xs mt-0.5 mb-2">{h.issuer}</p>
+              {h.desc && <p className="text-slate-500 text-xs leading-relaxed">{h.desc}</p>}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )
@@ -680,8 +796,11 @@ function Certifications() {
                 <Award size={18} style={{ color: '#fbbf24' }} />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-white font-bold text-sm">{cert.institution}</p>
-                {cert.subject && <p className="text-slate-400 text-xs mt-0.5">{cert.subject}</p>}
+                <p className="text-white font-bold text-sm">{cert.title || cert.institution}</p>
+                {cert.title && cert.institution && (
+                  <p className="text-indigo-400 text-xs mt-0.5">{cert.institution}</p>
+                )}
+                {cert.subject && <p className="text-slate-500 text-xs mt-1 leading-relaxed">{cert.subject}</p>}
               </div>
               <span
                 className="text-xs font-bold px-3 py-1 rounded-full"
@@ -833,6 +952,7 @@ export default function App() {
         <Experience />
         <TechStack />
         <Certifications />
+        <Honors />
         <Contact onPrint={handlePrint} />
         <Footer />
       </div>

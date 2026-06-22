@@ -154,6 +154,17 @@ body {
   border-radius: 3px;
 }
 
+.pcv-skill-line {
+  font-size: 9.5px;
+  color: #334155;
+  line-height: 1.5;
+  margin-bottom: 3px;
+}
+
+.pcv-skill-line strong {
+  color: #1e293b;
+}
+
 .pcv-job-header {
   font-size: 10.5px;
   font-weight: 700;
